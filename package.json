@@ -1,6 +1,6 @@
 {
   "name": "express-http-proxy",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "http proxy middleware for express",
   "engines": {
     "node": ">=6.0.0"
@@ -38,9 +38,15 @@
     "nock": "^10.0.6",
     "supertest": "^3.4.2"
   },
+  "peerDependencies": {
+    "http-proxy-agent": "^2.1.0",
+    "https-proxy-agent": "^3.0.1"
+  },
   "dependencies": {
     "debug": "^3.0.1",
     "es6-promise": "^4.1.1",
+    "http-proxy-agent": "^2.1.0",
+    "https-proxy-agent": "^3.0.1",
     "raw-body": "^2.3.0"
   },
   "contributors": [
