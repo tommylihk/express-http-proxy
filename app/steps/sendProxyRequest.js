@@ -29,9 +29,9 @@ function sendProxyRequest(Container) {
     if (proxy) {
       console.log({proxy, NO_PROXY_HOSTNAMES});
       if (NO_PROXY_HOSTNAMES.indexOf(req.hostname) < 0) {
-        const protocol = req.protocol.toLowerCase();
-        console.log({protocol});
-        const Agent = protocol.startsWith('https') ? HttpsProxyAgent : HttpProxyAgent;
+        console.log({https: options.https});
+        const Agent = options.https ? HttpsProxyAgent : HttpProxyAgent;
+        console.log({Agent});
         reqOpt.agent = new Agent(proxy);
       }
     }
