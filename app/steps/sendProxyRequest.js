@@ -21,17 +21,13 @@ function sendProxyRequest(Container) {
 
   return new Promise(function (resolve, reject) {
     var protocol = Container.proxy.requestModule;
-    console.log({ protocol: protocol.request.toString() });
 
     const { HTTP_PROXY, http_proxy, HTTPS_PROXY, https_proxy } = process.env;
     const proxy = [HTTP_PROXY, http_proxy, HTTPS_PROXY, https_proxy].find(p => p);
 
     if (proxy) {
-      console.log({proxy, NO_PROXY_HOSTNAMES});
       if (NO_PROXY_HOSTNAMES.indexOf(req.hostname) < 0) {
-        console.log({https: options.https});
         const Agent = options.https ? HttpsProxyAgent : HttpProxyAgent;
-        console.log({Agent});
         reqOpt.agent = new Agent(proxy);
       }
     }
